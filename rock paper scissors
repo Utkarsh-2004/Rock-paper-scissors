@@ -1,0 +1,65 @@
+import random
+lst = ['r','p','s']
+
+chances=10
+pchances=0
+computerpoint=0
+playerpoint=0
+
+print('ROCK PAPER SCISSORS GAME....')
+print('r for rock\np for paper\ns for scissors')
+
+while pchances < chances:
+    p1=input('r,p,s: ')
+    comp=random.choice(lst)
+
+    if p1 == comp:
+       print('>>Its a tie both have scored 0 ')
+
+    if p1 == 'r' and comp == 'p':
+        computerpoint=computerpoint + 1
+        print('>>computer wins 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n')
+
+    elif p1 == 'r' and comp == 's':
+        playerpoint=playerpoint+1
+        print('>>You win 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n' )
+
+    elif p1 == 'p' and comp == 'r':
+        playerpoint=playerpoint+1
+        print('>>You win 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n')
+
+    elif p1 == 'p' and comp == 's':
+        computerpoint=computerpoint+1
+        print('>>computer wins 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n')
+
+    elif p1 == 's' and comp == 'r':
+        computerpoint=computerpoint+1
+        print('>>computer wins 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n')
+
+    elif p1 == 's' and comp == 'p':
+        playerpoint=playerpoint+1
+        print('>>computer wins 1 point\n')
+        print(f'Your score is {playerpoint} and computer score is {computerpoint}\n')
+
+    else:
+        print('You have entered the wrong letter\n')
+
+    pchances=pchances+1
+    print(f'{chances - pchances} chances are left out of {chances}\n')
+
+print('GAME OVER!!')
+
+if computerpoint > playerpoint:
+    print('Computer wins the game.....BETTER LUCK NEXT TIME!!')
+
+if computerpoint < playerpoint:
+    print('You win the game...GREAT!!')
+
+print(f'your score is {playerpoint} and computer scor is {computerpoint}')
+
+
